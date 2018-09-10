@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Card :: Card(): _rank{rand() % 10}, _suit(rand()%3) {}
+Card :: Card(): _rank{rand() % 10}, _suit((Suit)(rand()%3)) {}
 Card :: Card(Suit s, Rank r): _suit(s), _rank(r) {}
 
 

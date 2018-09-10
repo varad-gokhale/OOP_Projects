@@ -13,11 +13,11 @@ class Card{
 		Suit suit();
 		Rank rank();
 
-		string card_to_string();
+		std::string card_to_string();
 
 	private:
-		_suit;
-		_rank;
-}
+		Suit _suit;
+		Rank _rank;
+};
 
 #endif

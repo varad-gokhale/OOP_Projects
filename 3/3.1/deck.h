@@ -11,5 +11,5 @@ class Deck{
 		Card deal();
 	private:
 		vector<Card> deck;
-
+};
 #endif
