@@ -5,11 +5,18 @@
 using namespace std;
 
 Deck :: Deck(int cards = 10){
-	for(int i: cards) deck.push_back(Card c());
+	for(int i = 0; i < cards; ++i)
+		 deck.push_back(Card());
 } 
 
 Card Deck :: deal(){
-	if(deck.size() > 0)	return deck.pop_back();
+	if(deck.size() > 0){
+		Card temp = deck.back();
+		deck.pop_back();
+		return temp;
+	}
+	
 	cout << "Deck is empty" << endl;
-	return 1;
+
+	return Card();
 }

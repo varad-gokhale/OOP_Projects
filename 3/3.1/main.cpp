@@ -6,7 +6,7 @@
 using namespace std;
 
 int main(){
-	Deck d(20);
 	for(int i = 0; i < 20; ++i)
-		card_to_string(d.deal());
+		cout << Card().card_to_string() << " ";
+	cout << endl;
 }

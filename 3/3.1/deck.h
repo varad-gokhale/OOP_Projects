@@ -1,4 +1,4 @@
-#ifdef __DECK_H
+#ifndef __DECK_H
 #define __DECK_H
 
 #include <vector>
@@ -10,6 +10,6 @@ class Deck{
 		Deck(int cards);
 		Card deal();
 	private:
-		vector<Card> deck;
+		std::vector<Card> deck;
 };
 #endif

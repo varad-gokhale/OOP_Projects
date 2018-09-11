@@ -15,4 +15,5 @@ string Card :: card_to_string(){
 	string ret = "";
 	ret += _suit == U ? 'U' : ((_suit == T) ? 'T': 'A');
 	ret += _rank + '0';
+	return ret;
 }
