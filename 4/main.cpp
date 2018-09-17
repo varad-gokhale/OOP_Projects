@@ -11,6 +11,6 @@ int main(){
 	std::vector<Gas_vehicle> ice = {
 		Gas_vehicle{2017, "Toyota", "RAV4", Body_style::CROSSOVER, 26, 15.9}
 	};
-	for(Electric_vehicle d: evs){	cout << d.kwh_consumed(100) << endl;	}
-	for(Gas_vehicle g: ice){	cout << g.gallons_consumed(100) << endl;	}
+	for(Electric_vehicle d: evs){	cout << d.kwh_consumed(100)*0.05 << endl;	}
+	for(Gas_vehicle g: ice){	cout << g.gallons_consumed(100)*2 << endl;	}
 }
