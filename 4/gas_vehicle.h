@@ -12,6 +12,6 @@ class Gas_vehicle: public Vehicle{
 	private:
 		double miles_per_gallon;
 		double max_gallons;		
-}
+};
 
 #endif

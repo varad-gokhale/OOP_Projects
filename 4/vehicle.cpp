@@ -1,19 +1,21 @@
+#include <iostream>
+#include "helper.h"
 #include "vehicle.h"
 
 Vehicle :: Vehicle(int year, std::string make, std::string model, Body_style body_style) try: year(year), make(make), model(model), body_style(body_style) {
-	if(year < 0 || make == "" || model == "" || body_style != SEDAN || body_style != HATCHBACK || body_style != MINIVAN ||body_style != SUV || body_style != CROSSOVER)
-		throw runtime_exception{"Out of range: Check vehicle year, make, model and body_style"};
+	if(year < 0 || make == "" || model == "" || body_style != Body_style :: SEDAN || body_style != Body_style::HATCHBACK || body_style != Body_style::MINIVAN ||body_style != Body_style::SUV || body_style != Body_style::CROSSOVER)
+		throw std::runtime_error{"Out of range: Check vehicle year, make, model and body_style"};
 
 
 }
-catch(runtime_exception &e){
-	cerr << "Runtime exception " << e.what() << endl;
-	cerr << "Exiting..." << endl;
+catch(std::runtime_error& e){
+	std::cerr << "Runtime exception " << e.what() << std::endl;
+	std::cerr << "Exiting..." << std::endl;
 	exit(1);
 }
 
 std::string Vehicle :: vehicle_to_str_year(int year){
-	int year = 0;
+	
 	int count = 0;
 	std::string ret = "";
 	if(year == 0)	return "0";
@@ -33,15 +35,15 @@ std::string Vehicle :: vehicle_to_str_year(int year){
 
 std::string Vehicle :: vehicle_to_str_body_style(Body_style body_style){
 	switch(body_style){
-		case SEDAN:
+		case Body_style::SEDAN:
 			return "SEDAN";
-		case HATCHBACK:
+		case Body_style::HATCHBACK:
 			return "HATCHBACK";
-		case MINIVAN:
+		case Body_style::MINIVAN:
 			return "MINIVAN";
-		case SUV:
+		case Body_style::SUV:
 			return "SUV";
-		case CROSSOVER:
+		case Body_style::CROSSOVER:
 			return "CROSSOVER";
 	}	
 }

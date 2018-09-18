@@ -12,6 +12,6 @@ class Electric_vehicle: public Vehicle{
 	private:
 		double miles_per_kwh;
 		double max_kwh;		
-}
+};
 
 #endif
