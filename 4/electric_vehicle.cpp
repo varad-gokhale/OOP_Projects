@@ -3,12 +3,12 @@
 #include "gas_vehicle.h"
 #include "electric_vehicle.h"
 
-Electric_vehicle :: Electric_vehicle(int year, std::string make, std::string model, Body_style body_style, double miles_per_kwh, double max_kwh): Vehicle(year, make, model, body_style)
+Electric_vehicle :: Electric_vehicle(int year, std::string make, std::string model, Body_style body_style, double mpkwh, double kwh_max): Vehicle(year, make, model, body_style)
 {
 	try{
-		max_kwh = max_kwh;
-		if(miles_per_kwh < 0)	throw std::runtime_error{"Miles cannot be less than 0"};
-		miles_per_kwh = miles_per_kwh;
+		max_kwh = kwh_max;
+		if(mpkwh < 0)	throw std::runtime_error{"Miles cannot be less than 0"};
+		miles_per_kwh = mpkwh;
 	}
 	catch(std::runtime_error& e){
 		std::cerr << "e.what()" << std::endl;

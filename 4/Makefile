@@ -1,7 +1,7 @@
 CXXFLAGS += --std=c++11
 
 main: main.o gas_vehicle.o electric_vehicle.o
-	${CXX} ${CXXFLAGS} -o main main.o gas_vehicle.o electric_vehicle.o
+	${CXX} ${CXXFLAGS} -o main main.o vehicle.o gas_vehicle.o electric_vehicle.o
 main.o: main.cpp *.h
 	${CXX} ${CXXFLAGS} -c main.cpp
 vehicle.o: vehicle.cpp *.h

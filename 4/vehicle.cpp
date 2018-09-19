@@ -3,7 +3,7 @@
 #include "vehicle.h"
 
 Vehicle :: Vehicle(int year, std::string make, std::string model, Body_style body_style) try: year(year), make(make), model(model), body_style(body_style) {
-	if(year < 0 || make == "" || model == "" || body_style != Body_style :: SEDAN || body_style != Body_style::HATCHBACK || body_style != Body_style::MINIVAN ||body_style != Body_style::SUV || body_style != Body_style::CROSSOVER)
+	if(year < 0 || make == "" || model == "" || (body_style != Body_style :: SEDAN && body_style != Body_style::HATCHBACK && body_style != Body_style::MINIVAN && body_style != Body_style::SUV &&  body_style != Body_style::CROSSOVER))
 		throw std::runtime_error{"Out of range: Check vehicle year, make, model and body_style"};
 
 
