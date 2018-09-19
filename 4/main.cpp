@@ -5,6 +5,9 @@
 #include "electric_vehicle.h"
 
 int main(){
+	std::vector<double> gas_prices = {2,2.25,2.50,3,4};
+	std::vector<double> kwh_prices = {0.05,0.08,0.11,0.13,0.15};
+
 	std::vector<Electric_vehicle> evs = {
 		Electric_vehicle{2014, "Tesla", "Model S 85", Body_style::SEDAN, 3.12, 85},
 		Electric_vehicle{2014, "Tesla", "Model 3 LR", Body_style::SEDAN, 4.13,75},
@@ -17,6 +20,17 @@ int main(){
 		Gas_vehicle{2018,"Nissan","Rogue", Body_style::HATCHBACK,29,14.5},
 		Gas_vehicle{2018,"Chrysler", "Pacifica", Body_style::MINIVAN, 22, 19},	
 	};
-	for(Electric_vehicle d: evs){	std::cout << d.kwh_consumed(100)*0.05 << std::endl;	}
-	for(Gas_vehicle g: ice){	std::cout << g.gallons_consumed(100)*2 << std::endl;	}
+	for(Electric_vehicle d: evs){
+		std::cout << d.vehicle_to_string() <<" cost per mile" <<  std::endl;		
+		for(double& price:kwh_prices){
+			std::cout << "	at price " << price << " per kwh -> " << d.kwh_consumed(100)*price << std::endl;
+		}
+	}
+	std::cout << std::endl;
+	for(Gas_vehicle g: ice){
+		std::cout << g.vehicle_to_string() << " cost per mile" << std::endl;
+		for(double& price: gas_prices){
+			std::cout << "	at price " << price << " per gallon -> " << g.gallons_consumed(100)*price << std::endl;
+		}
+	}
 }

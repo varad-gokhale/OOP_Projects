@@ -7,7 +7,7 @@
 class Vehicle{
 	public: 
 		Vehicle(int year, std::string make, std::string model, Body_style body_style);
-		std::string to_string();
+		std::string vehicle_to_string();
 		int get_year();
 		std::string get_make();
 		std::string get_model();

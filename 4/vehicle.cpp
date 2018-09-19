@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "helper.h"
 #include "vehicle.h"
 
@@ -28,7 +29,7 @@ std::string Vehicle :: vehicle_to_str_year(int year){
 	for(int i = 0; i < count/2; ++i){
 		char temp = ret[i];
 		ret[i] = ret[count-1-i];
-		ret[count-1-i] = ret[i];
+		ret[count-1-i] = temp;
 	}
 	return ret;
 }
@@ -49,8 +50,8 @@ std::string Vehicle :: vehicle_to_str_body_style(Body_style body_style){
 			return "TRUCK";
 	}	
 }
-std::string Vehicle :: to_string(){
-	return "year: " + vehicle_to_str_year(year) + " make: " + make + " model: " + model + " Body Style: " + vehicle_to_str_body_style(body_style); 
+std::string Vehicle :: vehicle_to_string(){
+	return "year: " + std::to_string(year) + " make: " + make + " model: " + model + " Body Style: " + vehicle_to_str_body_style(body_style); 
 }
 
 int Vehicle::get_year(){	return year;	}
